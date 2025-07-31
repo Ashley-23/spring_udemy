@@ -1,16 +1,14 @@
 package com.skya.produit_udemy.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 
 import java.util.Date;
 
 
 @Entity
 public class Produit {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long idProduit;
     private String nomProduit;
     private Double prixProduit;
@@ -19,6 +17,19 @@ public class Produit {
     public Produit() {
         super();
     }
+
+    @ManyToOne
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+
 
     public Produit(String nomProduit, Double prixProduit, Date dateProduit) {
         super();
@@ -69,6 +80,7 @@ public class Produit {
                 ", dateProduit=" + dateProduit +
                 '}';
     }
+
 
 
 
