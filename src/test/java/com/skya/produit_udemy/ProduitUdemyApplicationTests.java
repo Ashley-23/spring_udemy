@@ -56,4 +56,23 @@ class ProduitUdemyApplicationTests {
 		}
 	}
 
+
+	@Test
+	public void testFindProduitByNom(){
+		List<Produit> prods = produitRepository.findByNomProduit("PC Dell");
+
+		for (Produit produit : prods) {
+			System.out.println(produit);
+		}
+	}
+
+
+	@Test
+	public void testFindProduitByNomContains(){
+		List<Produit> prods = produitRepository.findByNomProduitContains("P");
+
+		for (Produit produit : prods) {
+			System.out.println(produit);
+		}
+	}
 }

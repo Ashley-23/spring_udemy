@@ -1,9 +1,12 @@
 package com.skya.produit_udemy.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@Data
 @Entity
 public class Category {
 
@@ -17,38 +20,5 @@ public class Category {
     private List <Produit> produits;
 
     public Category() {
-        super();
     }
-
-    public Category(String nomCategory, String descriptionCategory) {
-        super();
-        this.nomCategory = nomCategory;
-        this.descriptionCategory = descriptionCategory;
-    }
-
-    public Long getIdCategory() {
-        return idCategory;
-    }
-
-    public void setIdCategory(Long idCategory) {
-        this.idCategory = idCategory;
-    }
-
-    public String getNomCategory() {
-        return nomCategory;
-    }
-
-    public void setNomCategory(String nomCategory) {
-        this.nomCategory = nomCategory;
-    }
-
-    public String getDescriptionCategory() {
-        return descriptionCategory;
-    }
-
-    public void setDescriptionCategory(String descriptionCategory) {
-        this.descriptionCategory = descriptionCategory;
-    }
-
-
 }
